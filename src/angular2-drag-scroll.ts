@@ -57,10 +57,12 @@ export class DragScroll implements OnDestroy, OnInit, OnChanges, AfterViewChecke
   onMouseMoveHandler = this.onMouseMove.bind(this);
   onMouseDownHandler = this.onMouseDown.bind(this);
   onMouseUpHandler = this.onMouseUp.bind(this);
+  onMouseLeaveHandler = this.onMouseLeave.bind(this);
 
   mouseMoveListener: Function;
   mouseDownListener: Function;
   mouseUpListener: Function;
+  mouseLeaveListener: Function;
   nextMouseUpListener: Function;
   prevMouseUpListener: Function;
   nextTouchEndListener: Function;
@@ -118,9 +120,10 @@ export class DragScroll implements OnDestroy, OnInit, OnChanges, AfterViewChecke
     el.nativeElement.style.overflow = 'auto';
     el.nativeElement.style.whiteSpace = 'noWrap';
 
-    this.mouseMoveListener = renderer.listenGlobal('document', 'mousemove', this.onMouseMoveHandler);
+    this.mouseMoveListener = renderer.listenGlobal(el.nativeElement, 'mousemove', this.onMouseMoveHandler);
     this.mouseDownListener = renderer.listenGlobal(el.nativeElement, 'mousedown', this.onMouseDownHandler);
-    this.mouseUpListener = renderer.listenGlobal('document', 'mouseup', this.onMouseUpHandler);
+    this.mouseUpListener = renderer.listenGlobal(el.nativeElement, 'mouseup', this.onMouseUpHandler);
+	  this.mouseLeaveListener = renderer.listenGlobal(el.nativeElement, 'mouseleave', this.onMouseLeave.bind(this));
   }
 
   public attach({disabled, scrollbarHidden, yDisabled, xDisabled, nav}: DragScrollOption): void {
@@ -201,6 +204,11 @@ export class DragScroll implements OnDestroy, OnInit, OnChanges, AfterViewChecke
     return false;
   }
 
+  onMouseLeave(): any {
+      this.isPressed = false;
+      return false;
+  }
+  
   onMouseDown(e: MouseEvent) {
     this.isPressed = true;
     this.downX = e.clientX;
