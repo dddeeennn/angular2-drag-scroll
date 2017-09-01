@@ -1,11 +1,11 @@
 {
-  "name": "angular2-drag-scroll",
-  "version": "1.3.7",
-  "description": "Lightweight drag to scroll directive for Angular2",
+  "name": "angular-drag-scroll",
+  "version": "1.0.0",
+  "description": "Lightweight drag to scroll directive for Angular",
   "contributors": [
     {
-      "name": "Fan Jin",
-      "email": "fanjin1989@gmail.com"
+      "name": "Denis Chudinov",
+      "email": "denischudinovg@gmail.com"
     }
   ],
   "main": "index.js",
@@ -21,19 +21,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bfwg/angular2-drag-scroll.git"
+    "url": "git+https://github.com/dddeeennn/angular2-drag-scroll"
   },
   "keywords": [
     "Angular 2",
+	"Angular 4",
+	"Angular",
     "drag",
     "scroll"
   ],
-  "author": "Fan Jin",
+  "author": "Denis Chudinov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bfwg/angular2-drag-scroll.git"
+    "url": "https://github.com/dddeeennn/angular2-drag-scroll"
   },
-  "homepage": "https://github.com/bfwg/angular2-drag-scroll#readme",
+  "homepage": "https://github.com/dddeeennn/angular2-drag-scroll#readme",
   "peerDependencies": {
     "@angular/common": "4.2.3",
     "@angular/compiler": "4.2.3",
