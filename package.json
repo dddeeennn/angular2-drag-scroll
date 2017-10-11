@@ -36,11 +36,6 @@
     "url": "https://github.com/dddeeennn/angular2-drag-scroll"
   },
   "homepage": "https://github.com/dddeeennn/angular2-drag-scroll#readme",
-  "peerDependencies": {
-    "@angular/common": "4.2.3",
-    "@angular/compiler": "4.2.3",
-    "@angular/core": "4.2.3"
-  },
   "devDependencies": {
     "@angular/animations": "4.2.3",
     "@angular/common": "4.2.3",
